@@ -1,0 +1,325 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+  <title>Contacts</title>
+</head>
+
+<body>
+  <div class="contaier">
+    <nav class="navbar navbar-expand-lg navbar-light " id="navbar1">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><b>TakeLessons</b></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+
+            <li class="nav-item dropdown">
+
+              <a href="#"><i class="fa-solid fa-bullhorn" id="bullhorn"></i></a></i>
+              <span class="badge">22</span>
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <img src="./images/slika.JPG" alt="slika">
+                Jason H.
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-light" id="navbar2">
+      <div class="container-fluid">
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>DASHBOARD</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>CALENDAR</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"><b>CLIENTS</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><b>FINANCES</b></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+
+    <div class="split left">
+      <button type="button" class="btn btn-success" id="newContact"><i class="fa-solid fa-plus"></i><span></span> New
+        Contact</button>
+      <div class="input-icons">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="ie. client's name"
+          title="Type in a name">
+      </div>
+
+      <div class="panel" id="panelSort">
+        <label>Contact list: </label>
+      </div>
+
+      <ul id="contactsList">
+        <li id="0"><img src="./images/mark.JPG" id="0" alt="Mark"><a id="0" href="#">Mark <b id="0">Appleyard</b></a></li>
+        <li id="1"><img src="./images/chris.jpg" id="1" alt="Mark"><a id="1" href="#">Chris <b id="1">Cole</b></a></li>
+
+        <li id="2"><img src="./images/3.jpg" id="2" alt="Mark"><a id="2" href="#">Austin <b id="2">Gillette</b></a></li>
+        <li id="3"><img src="./images/4.jpg" id="3" alt="Mark"><a id="3" href="#">David <b id="3">Gonzales</b></a></li>
+
+        <li id="4"><img src="./images/6.jfif" id="4" alt="Mark"><a id="4" href="#">Maria <b id="4">Mosby</b></a></li>
+        <li id="5"><img src="./images/5.jpg" id="5" alt="Mark"><a id="5" href="#">Eric <b id="5">Koston</b></a></li>
+        <li id="6"><img src="./images/7.jpg" id="6" alt="Mark"><a id="6" href="#">Robin <b id="">Oldrin</b></a></li>
+      </ul>
+    </div>
+
+    <div class="split right" id="rightSide">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <h3 class="name" id="name"></h3>
+            <div class="demo"></div>
+            <button type="button" class="btn btn-light" id="editButton">Edit</button>
+            <img src="" alt="Mark" id="right">
+            <br />
+            <div class="row" id="notesRow">
+              <div class="col-sm">
+                <p class="label">Notes</p>
+                <p class="labelNotes" id="labelNotes"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm">
+            <br /> <br /> <br />
+            <div class="row">
+              <div class="col-sm">
+                <p class="label">Sex</p>
+                <p class="labelSex" id="labelSex"></p>
+              </div>
+
+              <div class="col-sm">
+                <p class="label">Age</p>
+                <p class="labelAge" id="labelAge"></p>
+              </div>
+
+              <div class="col-md">
+                <p class="label">Birthday</p>
+                <p class="labelBirthday" id="labelBirthday"></p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm">
+                <p class="label">Address</p>
+                <p class="labelAddress" id="labelAddress"></p>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-sm">
+                <p class="label">Home</p>
+                <p class="labelHome" id="labelHome"></p>
+              </div>
+
+              <div class="col-sm">
+                <p class="label">Primary Email</p>
+                <p class="labelPrimaryEmail" id="labelPrimaryEmail"></p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm">
+                <p class="label">Cell</p>
+                <p class="labelCell" id="labelCell"></p>
+              </div>
+
+              <div class="col-sm">
+                <p class="label">Secondary Email</p>
+                <p class="labelSecondaryEmail" id="labelSecondaryEmail"></p>
+              </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+              <div class="col-sm">
+                <p class="label">Billing Contact</p>
+                <img src="" alt="Eric" id="billImage">
+                <p class="labelBillingContact" id="labelBillingContact"></p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <br />
+        <div class="panel" id="panelSchedule">Schedule</div>
+        <br />
+        <div class="panel panel-default" id="prvPanel">
+          <div class="panel-heading">
+            <section class="panel-title">Tuesday 9:00am</section>
+
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Choose an action
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+              <li><a class="dropdown-item" href="#">Action 1</a></li>
+              <li><a class="dropdown-item" href="#">Action 2</a></li>
+              <li><a class="dropdown-item" href="#">Action 3</a></li>
+            </ul>
+          </div>
+
+          <div class="panel-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                  <p class="label">Service</p>
+                  <p class="labelService">Switch Flip 101</p>
+                </div>
+
+                <div class="col-sm">
+                  <p class="label">Location</p>
+                  <p class="labelLocation">Fantasy</p>
+                </div>
+
+                <div class="col-md">
+                  <p class="label">Status</p>
+                  <p class="labelStatus">Paid</p>
+                </div>
+              </div>
+
+              <div class="alert alert-danger" role="alert">
+                Lesson still needs to be marked!
+                <div class="alertButtons">
+                  <button type="button" class="btn btn-success" id="Attended">Attended</button>
+                  <button type="button" class="btn btn-danger" id="Missed">Missed</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="panel panel-default" id="vtorPanel">
+          <div class="panel-heading">
+            <section class="panel-title">Thursday 2:00pm</section>
+
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Choose an action
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+              <li><a class="dropdown-item" href="#">Action 1</a></li>
+              <li><a class="dropdown-item" href="#">Action 2</a></li>
+              <li><a class="dropdown-item" href="#">Action 3</a></li>
+            </ul>
+          </div>
+
+          <div class="panel-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                  <p class="label">Service</p>
+                  <p class="labelService">Mega Ramp</p>
+                </div>
+
+                <div class="col-sm">
+                  <p class="label">Location</p>
+                  <p class="labelLocation">The Berricks</p>
+                </div>
+
+                <div class="col-md">
+                  <p class="label">Status</p>
+                  <p class="labelStatus">Canceled</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="panel panel-default" id="vtorPanel">
+          <div class="panel-heading">
+            <section class="panel-title">Saturday 12:45pm</section>
+
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Choose an action
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+              <li><a class="dropdown-item" href="#">Action 1</a></li>
+              <li><a class="dropdown-item" href="#">Action 2</a></li>
+              <li><a class="dropdown-item" href="#">Action 3</a></li>
+            </ul>
+          </div>
+
+          <div class="panel-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                  <p class="label">Service</p>
+                  <p class="labelService">S.K.A.T.E</p>
+                </div>
+
+                <div class="col-sm">
+                  <p class="label">Location</p>
+                  <p class="labelLocation">The Berricks</p>
+                </div>
+
+                <div class="col-md">
+                  <p class="label">Status</p>
+                  <p class="labelStatus">Paid</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <br />
+
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript" src="./app.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <script src="https://kit.fontawesome.com/779d2fb749.js" crossorigin="anonymous"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</body>
+
+</html>
